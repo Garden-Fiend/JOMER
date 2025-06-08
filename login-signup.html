@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SLSU Community</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Sign In Page -->
+    <div id="signInPage" class="container">
+      <div class="sign-in-container">
+        <div class="left-panel">
+          <div class="logo"></div>
+          <h1>Sign in</h1>
+          <p class="subtitle">to SLSU Community</p>
+
+          <form id="signInForm">
+            <div class="form-group">
+              <input type="text" id="emailInput" placeholder="Email or Phone" required />
+            </div>
+
+            <a href="#" class="forgot-link">Forgot email?</a>
+
+            <p class="guest-mode">
+              Not your computer? Use Guest mode to sign in privately.
+              <a href="#">Learn more about using Guest mode</a>
+            </p>
+
+            <div
+              class="account-dropdown"
+              style="position: relative; display: inline-block"
+            >
+              <button class="create-account-btn" onclick="toggleDropdown()">
+                Create Account
+              </button>
+              <div id="dropdownMenu" style="display: none; position: absolute">
+                <button
+                  class="dropdown-item"
+                  style="display: block; width: 100%"
+                  onclick="selectAccountType('personal')"
+                >
+                  Personal
+                </button>
+                <button
+                  class="dropdown-item"
+                  style="display: block; width: 100%"
+                  onclick="selectAccountType('organization')"
+                >
+                  Organization
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="next-btn"
+              onclick="goToPasswordPage()"
+            >
+              Next
+            </button>
+          </form>
+        </div>
+        <div class="right-panel"></div>
+      </div>
+    </div>
+
+    <div id="emailPage" class="container hidden">
+      <div class="sign-in-container">
+        <div class="left-panel">
+          <div class="logo"></div>
+          <h1>Sign in</h1>
+          <p class="subtitle">to SLSU Community</p>
+
+          <form id="passwordForm">
+            <div class="form-group">
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="passwordRemember"onclick="togglePasswordVisibility()" />
+                Show Password
+              </label>
+            </div>
+            <br /><br /><br />
+            <button type="button" class="next-btn" onclick="login()">Login</button>
+          </form>
+
+          <!-- <form id="emailForm">
+                <div class="form-group">
+                    <input type="email" placeholder="Email address" required>
+                </div>
+
+                <button type="button" class="btn-back" onclick="showPage('signInPage')">← Back</button>
+                <button type="submit" class="next-btn">Next</button>
+            </form> -->
+        </div>
+        <div class="right-panel"></div>
+      </div>
+    </div>
+
+    <!-- Personal Account Creation Page -->
+    <div id="personalAccountPage" class="container hidden">
+      <div class="form-container">
+        <h1>Create Account Personal</h1>
+
+        <form id="personalAccountForm">
+          <input type="hidden" name="account_type" value="personal" />
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="firstName" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="lastName" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Student ID</label>
+              <input type="text" name="studentId" required />
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>College</label>
+            <input type="text" name="college" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Program</label>
+              <input type="text" name="program" required />
+            </div>
+            <div class="form-group">
+              <label>Year Level</label>
+              <select name="yearLevel" required>
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="next-btn"
+            onclick="showCredentialsPage()"
+          >
+            Next
+          </button>
+          <button
+            type="button"
+            onclick="showPage('signInPage')"
+            class="back-btn"
+          >
+            Back
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Organization Account Creation Page -->
+    <div id="organizationAccountPage" class="container hidden">
+      <div class="form-container">
+        <h1>Create Account Organization</h1>
+
+        <form id="organizationAccountForm">
+          <input type="hidden" name="account_type" value="organization" />
+          <div class="form-group">
+            <label>Organization Name</label>
+            <input type="text" name="organizationName" required />
+          </div>
+
+          <div class="form-group">
+            <label>College</label>
+            <input type="text" name="college" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Type of Organization</label>
+              <select name="organizationType" required>
+                <option value="">Select Type</option>
+                <option value="academic">Academic Organization</option>
+                <option value="cultural">Cultural Organization</option>
+                <option value="sports">Sports Organization</option>
+                <option value="religious">Religious Organization</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Badge Color</label>
+              <input
+                type="color"
+                name="badgeColor"
+                class="color-picker"
+                value="#4169E1"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="next-btn"
+            onclick="showCredentialsPage()"
+          >
+            Next
+          </button>
+          <button
+            type="button"
+            onclick="showPage('signInPage')"
+            class="back-btn"
+          >
+            Back
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Credentials Page -->
+    <div id="credentialsPage" class="container hidden">
+      <div class="form-container">
+        <h1>Create Account</h1>
+
+        <form id="credentialsForm">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" required />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" required />
+          </div>
+
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" name="confirmPassword" required />
+          </div>
+
+          <button type="submit" class="next-btn" onclick="">Next</button>
+          <button
+            type="button"
+            onclick="showPage('signInPage')"
+            class="back-btn"
+          >
+            Back
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

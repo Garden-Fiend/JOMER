@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Personal - Newsfeed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <div class="header">
+      <div class="header-logo"></div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search" />
+      </div>
+
+      <div class="nav-tabs">
+        <a href="personal_newsfeed.html" class="active">Newsfeed</a>
+        <a href="personal_friend request.html" class="active">Friends</a>
+      </div>
+
+      <div class="profile-section">
+        <a href="personal_profile.html"><div class="profile-avatar"></div></a>
+        <span>My Profile</span>
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <main>
+      <!-- Left Panel -->
+      <div class="left-panel">
+        <!-- Profile -->
+        <!-- <div class="profile-panel">
+        <div class="profile-card">
+          <div class="profile-pic"></div>
+          <div class="profile-info">
+            <h1>Apolonia dela Cruz</h1>
+            <p>@Adcruz</p>
+          </div>
+          <div class="profile-actions">
+            <button>Decline</button>
+            <button class="follow-btn">Confirm</button>
+          </div>
+        </div>
+      </div> -->
+
+        <!-- Org and Feed Row -->
+        <div class="content-row">
+          <!-- Organization Section
+        <div class="org-panel">
+            <div class="card">
+                <h3>Organization</h3>
+            </div>
+        </div> -->
+    <div class="sidebar">
+  <div class="user-card">
+    <div class="user-info">
+      <div class="user-avatar"></div>
+      <div>
+        <div id="usernameDisplay" style="font-weight: 600; font-size:x-large;">Username</div>
+      </div>
+          
+    </div>
+
+    <div>
+               <h4>Organization</h4>
+    </div>
+    <div id="orgContainer">
+      <!-- Cloned dynamically below -->
+    </div>
+
+    <!-- Template for dynamic cloning -->
+    <template id="orgTemplate">
+      <div class="organization-info" style="display: block;">
+        <div style="display: flex; align-items: center; gap: 10px; padding-bottom: 10px;">
+          <div style="width: 20px; height: 20px; background: #666; border-radius: 50%;"></div>
+          <span class="org-name" style="color: #666;">ISIT</span>
+          <span class="member-badge">MEMBER</span>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+
+
+
+      <!-- Feed Panel -->
+<div class="feed-panel">
+  <!-- Post Box -->
+  <div class="postbox-panel">
+    <div class="postbox-card">
+      <div class="postbox-main">
+        <div class="postbox-avatar"></div>
+        <input
+          type="text"
+          class="postbox-input"
+          placeholder="What’s on your mind, Yuyan?"
+        />
+      </div>
+    <div class="postbox-actions">
+  <button class="post-btn">
+    <img src="assets/vectors/pen.svg" alt="Write" /> Write a Post
+  </button>
+  <button class="upload-btn">
+    <img src="assets/vectors/image.svg" alt="Upload" /> Upload Photo/Video
+  </button>
+  <input
+    type="file"
+    class="postbox-file"
+    accept="image/*"
+    style="display: none"
+  />
+</div>
+
+    </div>
+  </div>
+
+  <!-- Post Feed -->
+  <div class="post-feed">
+    <!-- JS will dynamically insert posts here -->
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+     <div class="right-panel">
+  <!-- Friend Requests -->
+  <div class="card">
+    <h3>Friend Requests</h3>
+    <div id="friend-requests-container">
+      <!-- Friend requests will be injected here -->
+    </div>
+  </div>
+
+  <!-- Friends List -->
+  <div class="card">
+    <div class="card-header">
+      <h3>Friends</h3>
+      <img src="assets/vectors/search.svg" alt="Search" class="search-icon" />
+    </div>
+    <div id="friends-list-container">
+      <!-- Friends will be injected here -->
+    </div>
+  </div>
+</div>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal - Newsfeed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="header">
+      <div class="header-logo"></div>
+      
+      <div class="search-bar">
+          <input type="text" placeholder="Search">
+      </div>
+      
+      <div class="nav-tabs">
+          <a href="#" class="active">Newsfeed</a>
+          <a href="#" class="active">Friends</a>
+          <a href="#">Groups</a>
+      </div>
+      
+      <div class="profile-section">
+          <div class="profile-avatar"></div>
+          <span>My Profile</span>
+      </div>
+  </div>
+
+  <!-- Main Layout -->
+  <main>
+
+    <!-- Left Panel -->
+    <div class="left-panel">
+
+      
+      <!-- Org and Feed Row -->
+      <div class="content-row">
+      
+
+        <div class="sidebar">
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div style="font-weight: 600;">Username</div>
+                        </div>
+                    </div>
+                    
+                    <div class="organization-info">
+                        <h3>Officers</h3>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #666; border-radius: 50%;"></div>
+                            <span style="color: #666;">Name</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Feed Panel -->
+        <div class="feed-panel">
+
+            <!-- Post Box -->
+            <div class="postbox-panel">
+                <div class="postbox-card">
+                    <div class="postbox-main">
+                    <div class="postbox-avatar"></div>
+                    <input type="text" class="postbox-input" placeholder="What’s on your mind, Yuyan?">
+                    </div>
+                    <div class="postbox-actions">
+                    <button class="post-btn">
+                        <img src="assets/vectors/pen.svg" alt="Write"> Write a Post
+                    </button>
+                    <button class="upload-btn">
+                        <img src="assets/vectors/image.svg" alt="Upload"> Upload Photo/Video
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Post Feed -->
+          <div class="post-card">
+            <div class="post-avatar"></div>
+            <div class="post-content">
+              <div class="post-header">
+                <div class="post-meta">
+                  <span class="post-name">Apolonia dela Cruz</span>
+                  <span class="post-handle">@adcruz</span>
+                  <span class="date">Nov 1</span>
+                </div>
+              </div>
+              <p class="post-text">Pagod na ako hay...</p>
+              <div class="post-footer">
+                <button>
+                  <img src="assets/vectors/handthumbsup.svg" alt="Like"> Like
+                </button>
+                <button>
+                  <img src="assets/vectors/chatbubble.svg" alt="Comment"> Comment
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="card">
+        <h3>Membership Requests</h3>
+        <div class="request-card">
+          <div class="request-avatar"></div>
+          <div class="request-info">
+            <p class="request-name">Juanita dela Cruz</p>
+            <div class="request-buttons">
+              <button class="btn-confirm">Confirm</button>
+              <button class="btn-decline">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+            <h3>Members</h3>
+            <img src="assets/vectors/search.svg" alt="Search" class="search-icon">
+        </div>
+        <div class="friend-card">
+          <div class="friend-avatar"></div>
+          <div>Juan dela Cruz</div>
+        </div>
+        <div class="friend-card">
+          <div class="friend-avatar"></div>
+          <div>Juan dela Cruz</div>
+        </div>
+        <div class="friend-card">
+          <div class="friend-avatar"></div>
+          <div>Juan dela Cruz</div>
+        </div>
+        <div class="friend-card">
+          <div class="friend-avatar"></div>
+          <div>Juan dela Cruz</div>
+        </div>
+        <div class="friend-card">
+          <div class="friend-avatar"></div>
+          <div>Juan dela Cruz</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SLSU Community</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+         <!-- Friend Request Page -->
+    <div id="friendRequestPage" class="main-container">
+        <div class="header">
+            <div class="header-logo"></div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            
+            <div class="nav-tabs">
+                <a href="#" class="active">Newsfeed</a>
+                <a href="#" class="active">Friends</a>
+                <a href="#">Groups</a>
+            </div>
+            
+            <div class="profile-section">
+                <div class="profile-avatar"></div>
+                <span>My Profile</span>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="user-card">
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <div style="font-weight: 600;">Username</div>
+                        </div>
+                    </div>
+                    
+                    <div class="organization-info">
+                        <h3>Organization</h3>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #666; border-radius: 50%;"></div>
+                            <span style="color: #666;">ISIT</span>
+                            <span class="member-badge">MEMBER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <h2 class="section-title">Friend Requests</h2>
+                
+                <div class="friend-grid" id="friendRequests">
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Janine De Vera</div>
+                        <div class="friend-username">@jdvera</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-confirm" onclick="handleFriendRequest(this, 'confirm')">Confirm</button>
+                            <button class="btn btn-decline" onclick="handleFriendRequest(this, 'decline')">Decline</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-confirm" onclick="handleFriendRequest(this, 'confirm')">Confirm</button>
+                            <button class="btn btn-decline" onclick="handleFriendRequest(this, 'decline')">Decline</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-confirm" onclick="handleFriendRequest(this, 'confirm')">Confirm</button>
+                            <button class="btn btn-decline" onclick="handleFriendRequest(this, 'decline')">Decline</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-confirm" onclick="handleFriendRequest(this, 'confirm')">Confirm</button>
+                            <button class="btn btn-decline" onclick="handleFriendRequest(this, 'decline')">Decline</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Janine De Vera</div>
+                        <div class="friend-username">@jdvera</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-confirm" onclick="handleFriendRequest(this, 'confirm')">Confirm</button>
+                            <button class="btn btn-decline" onclick="handleFriendRequest(this, 'decline')">Decline</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-confirm" onclick="handleFriendRequest(this, 'confirm')">Confirm</button>
+                            <button class="btn btn-decline" onclick="handleFriendRequest(this, 'decline')">Decline</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="section-title">People you may know</h2>
+                
+                <div class="friend-grid" id="suggestions">
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Janine De Vera</div>
+                        <div class="friend-username">@jdvera</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-cancel" onclick="handleSuggestion(this, 'cancel')">Cancel Request</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-add" onclick="handleSuggestion(this, 'add')">Add</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-add" onclick="handleSuggestion(this, 'add')">Add</button>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-card">
+                        <div class="friend-avatar"></div>
+                        <div class="friend-name">Name</div>
+                        <div class="friend-username">@Username</div>
+                        <div class="action-buttons">
+                            <button class="btn btn-add" onclick="handleSuggestion(this, 'add')">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
